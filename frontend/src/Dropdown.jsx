@@ -1,0 +1,28 @@
+// frontend/src/Dropdown.jsx
+
+// wip
+
+function Dropdown(props) {
+    const handleChange = (event) => {
+        props.onSelectCharacter(event.target.value)
+    }
+
+    const dropdownStyle = {
+        position: 'absolute',
+        top: `${props.position.y}px`,
+        left: `${props.position.x}px`
+    }
+
+    return (
+        <form style={dropdownStyle}>
+            <select onChange={handleChange} defaultValue="select-character">
+                <option disabled value="select-character">Select A Character</option>
+                <option value="c1placeholder">C1 Placeholder</option>
+                <option value="c2placeholder">C2 Placeholder</option>
+                <option value="c3placeholder">C3 Placeholder</option>
+            </select>
+        </form>
+    );
+}
+
+export default Dropdown;

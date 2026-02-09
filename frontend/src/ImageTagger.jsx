@@ -1,0 +1,52 @@
+// frontend/src/ImageTagger.jsx
+
+import { useState } from "react";
+import mainImage from "../public/images/mainImage.jpg";
+import Dropdown from './Dropdown';
+
+// render image
+function DisplayImage(props) {
+    return (
+    <div className="main-image" style={{ padding: 0, margin: 0, position: 'relative' }}>
+        <img 
+            src={mainImage} 
+            onClick={props.onImageClick} 
+            alt="The Raid by Laurie Greasley"
+            style={{ display: 'block', margin: 0, padding: 0 }}
+        />
+        {props.children}
+    </div>
+    );
+}
+
+function ImageParent() {
+    // image location clicked state
+    const [clickLocation, setClickLocation] = useState(null)
+
+    // detect x/y click coordinates
+    function detectClick(event) {
+        setClickLocation({ 
+            x: event.nativeEvent.offsetX, 
+            y: event.nativeEvent.offsetY
+        });
+    }
+
+    // select character and close dropdown
+    function characterSelection(value) {
+        console.log(`${value} was selected at x: ${clickLocation.x}, y: ${clickLocation.y}`);
+        setClickLocation(null);
+    }
+
+    return (
+        <div className="img-and-dropdown">
+            <DisplayImage onImageClick={detectClick}>
+                {clickLocation ? <Dropdown 
+                                    position={clickLocation} 
+                                    onSelectCharacter={characterSelection} 
+                                /> : null}
+            </DisplayImage>
+        </div>
+    )
+}
+
+export default ImageParent;
