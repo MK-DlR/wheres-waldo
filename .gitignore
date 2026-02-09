@@ -1,9 +1,18 @@
 # Dependencies 
-# node_modules/ 
+node_modules/ 
 
 # Environment 
-# .env
+.env
 
-# Logs 
+# Prisma generated files
+backend/prisma/generated/
+
+# Build outputs
+frontend/dist/
+
+# Logs and OS files
+*.log
+
+# Project planning 
 plan.txt
 changelog.txt
