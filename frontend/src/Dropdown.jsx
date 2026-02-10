@@ -16,9 +16,9 @@ function Dropdown(props) {
         <form style={dropdownStyle} onClick={event => event.stopPropagation()}>
             <select onChange={handleChange} defaultValue="select-character">
                 <option disabled value="select-character">Select A Character</option>
-                <option value="c1placeholder">C1 Placeholder</option>
-                <option value="c2placeholder">C2 Placeholder</option>
-                <option value="c3placeholder">C3 Placeholder</option>
+                {props.characters.map((character) => (
+                    <option key={character.id} value={character.name}>{character.name}</option>
+                ))}
             </select>
         </form>
     );

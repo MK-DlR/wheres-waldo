@@ -20,7 +20,7 @@ function DisplayImage(props) {
     );
 }
 
-function ImageParent() {
+function ImageParent(props) {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
 
@@ -52,7 +52,8 @@ function ImageParent() {
                     <>
                         <Dropdown 
                             position={clickLocation} 
-                            onSelectCharacter={characterSelection} />
+                            onSelectCharacter={characterSelection} 
+                            characters={props.characters} />
                         <Targeting position={clickLocation} />
                     </>
                 ) : null}
