@@ -1,7 +1,7 @@
 // frontend/src/ImageTagger.jsx
 
 import { useState } from "react";
-import mainImage from "../public/images/mainImage.jpg";
+import mainImage from "./images/mainImage.jpg";
 import Dropdown from './Dropdown';
 
 // render image
