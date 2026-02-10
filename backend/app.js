@@ -21,9 +21,9 @@ app.get("/", (req, res) => {
   res.json({ message: "API running" });
 });
 
-// const usersRouter = require("./routes/users"); // placeholder router
+// const charactersRouter = require("./routes/characters");
 
-// app.use("/users", usersRouter); // placeholder router
+// app.use("/characters", charactersRouter);
 
 // 404 handler
 app.use((req, res) => {
