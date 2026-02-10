@@ -24,12 +24,18 @@ function ImageParent() {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
 
-    // detect x/y click coordinates
+    // detect x/y click coordinates and convert to percentages
     function detectClick(event) {
+        const rect = event.target.getBoundingClientRect();
+        const xPercent = event.nativeEvent.offsetX / rect.width * 100;
+        const yPercent = event.nativeEvent.offsetY / rect.height * 100;
+
         setClickLocation({ 
-            x: event.nativeEvent.offsetX, 
-            y: event.nativeEvent.offsetY
+            x: xPercent, 
+            y: yPercent
         });
+
+        console.log(clickLocation)
     }
 
     // select character and close dropdown

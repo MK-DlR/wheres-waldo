@@ -8,8 +8,8 @@ function Dropdown(props) {
     // position dropdown box at click point
     const dropdownStyle = {
         position: 'absolute',
-        top: `${props.position.y + 40}px`,
-        left: `${props.position.x - 65}px`
+        top: `${props.position.y}%`,
+        left: `${props.position.x}%`
     }
 
     return (
