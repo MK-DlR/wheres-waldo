@@ -6,6 +6,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { prisma } = require("./lib/prisma");
+const cors = require("cors");
 
 // initialize app
 const app = express();
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json()); // parse json for apis
 app.use(express.urlencoded({ extended: true })); // parse form data
 app.use(express.static(path.join(__dirname, "public"))); // static files
+app.use(cors());
 
 // routes
 // home route (before routers)
