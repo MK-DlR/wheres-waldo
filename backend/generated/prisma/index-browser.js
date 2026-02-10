@@ -124,7 +124,8 @@ exports.Prisma.CharacterScalarFieldEnum = {
   id: 'id',
   name: 'name',
   x_coord: 'x_coord',
-  y_coord: 'y_coord'
+  y_coord: 'y_coord',
+  image: 'image'
 };
 
 exports.Prisma.GameSessionScalarFieldEnum = {

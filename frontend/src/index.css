@@ -21,3 +21,8 @@ body {
 .main-image {
   display: inline-block;
 }
+
+.characters-container {
+  display: flex;
+  gap: 10px;
+}

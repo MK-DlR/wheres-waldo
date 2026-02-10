@@ -52,11 +52,14 @@ function FindCharacters() {
     if (status === "error") return <p>Something went wrong!</p>;
   
     return (
-        <>
+        <div className="characters-container">
           {characters.map((character) => (
-            <p key={character.id}>{character.name}</p>
+            <div key={character.id} className="characters-card">
+              <img src={character.image} alt={character.name} />
+              <p>{character.name}</p>
+            </div>
           ))}
-        </>
+        </div>
     );
   }
 

@@ -982,6 +982,7 @@ export namespace Prisma {
     name: string | null
     x_coord: number | null
     y_coord: number | null
+    image: string | null
   }
 
   export type CharacterMaxAggregateOutputType = {
@@ -989,6 +990,7 @@ export namespace Prisma {
     name: string | null
     x_coord: number | null
     y_coord: number | null
+    image: string | null
   }
 
   export type CharacterCountAggregateOutputType = {
@@ -996,6 +998,7 @@ export namespace Prisma {
     name: number
     x_coord: number
     y_coord: number
+    image: number
     _all: number
   }
 
@@ -1017,6 +1020,7 @@ export namespace Prisma {
     name?: true
     x_coord?: true
     y_coord?: true
+    image?: true
   }
 
   export type CharacterMaxAggregateInputType = {
@@ -1024,6 +1028,7 @@ export namespace Prisma {
     name?: true
     x_coord?: true
     y_coord?: true
+    image?: true
   }
 
   export type CharacterCountAggregateInputType = {
@@ -1031,6 +1036,7 @@ export namespace Prisma {
     name?: true
     x_coord?: true
     y_coord?: true
+    image?: true
     _all?: true
   }
 
@@ -1125,6 +1131,7 @@ export namespace Prisma {
     name: string
     x_coord: number
     y_coord: number
+    image: string
     _count: CharacterCountAggregateOutputType | null
     _avg: CharacterAvgAggregateOutputType | null
     _sum: CharacterSumAggregateOutputType | null
@@ -1151,6 +1158,7 @@ export namespace Prisma {
     name?: boolean
     x_coord?: boolean
     y_coord?: boolean
+    image?: boolean
   }, ExtArgs["result"]["character"]>
 
   export type CharacterSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1158,6 +1166,7 @@ export namespace Prisma {
     name?: boolean
     x_coord?: boolean
     y_coord?: boolean
+    image?: boolean
   }, ExtArgs["result"]["character"]>
 
   export type CharacterSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1165,6 +1174,7 @@ export namespace Prisma {
     name?: boolean
     x_coord?: boolean
     y_coord?: boolean
+    image?: boolean
   }, ExtArgs["result"]["character"]>
 
   export type CharacterSelectScalar = {
@@ -1172,9 +1182,10 @@ export namespace Prisma {
     name?: boolean
     x_coord?: boolean
     y_coord?: boolean
+    image?: boolean
   }
 
-  export type CharacterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "x_coord" | "y_coord", ExtArgs["result"]["character"]>
+  export type CharacterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "x_coord" | "y_coord" | "image", ExtArgs["result"]["character"]>
 
   export type $CharacterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Character"
@@ -1184,6 +1195,7 @@ export namespace Prisma {
       name: string
       x_coord: number
       y_coord: number
+      image: string
     }, ExtArgs["result"]["character"]>
     composites: {}
   }
@@ -1611,6 +1623,7 @@ export namespace Prisma {
     readonly name: FieldRef<"Character", 'String'>
     readonly x_coord: FieldRef<"Character", 'Float'>
     readonly y_coord: FieldRef<"Character", 'Float'>
+    readonly image: FieldRef<"Character", 'String'>
   }
     
 
@@ -3024,7 +3037,8 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     x_coord: 'x_coord',
-    y_coord: 'y_coord'
+    y_coord: 'y_coord',
+    image: 'image'
   };
 
   export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
@@ -3137,6 +3151,7 @@ export namespace Prisma {
     name?: StringFilter<"Character"> | string
     x_coord?: FloatFilter<"Character"> | number
     y_coord?: FloatFilter<"Character"> | number
+    image?: StringFilter<"Character"> | string
   }
 
   export type CharacterOrderByWithRelationInput = {
@@ -3144,6 +3159,7 @@ export namespace Prisma {
     name?: SortOrder
     x_coord?: SortOrder
     y_coord?: SortOrder
+    image?: SortOrder
   }
 
   export type CharacterWhereUniqueInput = Prisma.AtLeast<{
@@ -3154,6 +3170,7 @@ export namespace Prisma {
     name?: StringFilter<"Character"> | string
     x_coord?: FloatFilter<"Character"> | number
     y_coord?: FloatFilter<"Character"> | number
+    image?: StringFilter<"Character"> | string
   }, "id">
 
   export type CharacterOrderByWithAggregationInput = {
@@ -3161,6 +3178,7 @@ export namespace Prisma {
     name?: SortOrder
     x_coord?: SortOrder
     y_coord?: SortOrder
+    image?: SortOrder
     _count?: CharacterCountOrderByAggregateInput
     _avg?: CharacterAvgOrderByAggregateInput
     _max?: CharacterMaxOrderByAggregateInput
@@ -3176,6 +3194,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Character"> | string
     x_coord?: FloatWithAggregatesFilter<"Character"> | number
     y_coord?: FloatWithAggregatesFilter<"Character"> | number
+    image?: StringWithAggregatesFilter<"Character"> | string
   }
 
   export type GameSessionWhereInput = {
@@ -3236,6 +3255,7 @@ export namespace Prisma {
     name: string
     x_coord: number
     y_coord: number
+    image: string
   }
 
   export type CharacterUncheckedCreateInput = {
@@ -3243,12 +3263,14 @@ export namespace Prisma {
     name: string
     x_coord: number
     y_coord: number
+    image: string
   }
 
   export type CharacterUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     x_coord?: FloatFieldUpdateOperationsInput | number
     y_coord?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type CharacterUncheckedUpdateInput = {
@@ -3256,6 +3278,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     x_coord?: FloatFieldUpdateOperationsInput | number
     y_coord?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type CharacterCreateManyInput = {
@@ -3263,12 +3286,14 @@ export namespace Prisma {
     name: string
     x_coord: number
     y_coord: number
+    image: string
   }
 
   export type CharacterUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     x_coord?: FloatFieldUpdateOperationsInput | number
     y_coord?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type CharacterUncheckedUpdateManyInput = {
@@ -3276,6 +3301,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     x_coord?: FloatFieldUpdateOperationsInput | number
     y_coord?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type GameSessionCreateInput = {
@@ -3373,6 +3399,7 @@ export namespace Prisma {
     name?: SortOrder
     x_coord?: SortOrder
     y_coord?: SortOrder
+    image?: SortOrder
   }
 
   export type CharacterAvgOrderByAggregateInput = {
@@ -3386,6 +3413,7 @@ export namespace Prisma {
     name?: SortOrder
     x_coord?: SortOrder
     y_coord?: SortOrder
+    image?: SortOrder
   }
 
   export type CharacterMinOrderByAggregateInput = {
@@ -3393,6 +3421,7 @@ export namespace Prisma {
     name?: SortOrder
     x_coord?: SortOrder
     y_coord?: SortOrder
+    image?: SortOrder
   }
 
   export type CharacterSumOrderByAggregateInput = {
