@@ -3,6 +3,7 @@
 import { useState } from "react";
 import mainImage from "./images/mainImage.jpg";
 import Dropdown from './Dropdown';
+import Targeting from "./Targeting";
 
 // render image
 function DisplayImage(props) {
@@ -37,14 +38,18 @@ function ImageParent() {
         setClickLocation(null);
     }
 
-    // conditionally display dropdown
+    // conditionally display dropdown and targeting box
     return (
         <div className="img-and-dropdown">
             <DisplayImage onImageClick={detectClick}>
-                {clickLocation ? <Dropdown 
-                                    position={clickLocation} 
-                                    onSelectCharacter={characterSelection} 
-                                /> : null}
+                {clickLocation ? (
+                    <>
+                        <Dropdown 
+                            position={clickLocation} 
+                            onSelectCharacter={characterSelection} />
+                        <Targeting position={clickLocation} />
+                    </>
+                ) : null}
             </DisplayImage>
         </div>
     )
