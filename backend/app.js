@@ -21,9 +21,8 @@ app.get("/", (req, res) => {
   res.json({ message: "API running" });
 });
 
-// const charactersRouter = require("./routes/characters");
-
-// app.use("/characters", charactersRouter);
+const charactersRouter = require("./routes/characters");
+app.use("/characters", charactersRouter);
 
 // 404 handler
 app.use((req, res) => {
