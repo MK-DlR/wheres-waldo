@@ -1,12 +1,11 @@
 // frontend/src/Dropdown.jsx
 
-// wip
-
 function Dropdown(props) {
     const handleChange = (event) => {
         props.onSelectCharacter(event.target.value)
     }
 
+    // position dropdown box at click point
     const dropdownStyle = {
         position: 'absolute',
         top: `${props.position.y}px`,
@@ -14,7 +13,7 @@ function Dropdown(props) {
     }
 
     return (
-        <form style={dropdownStyle}>
+        <form style={dropdownStyle} onClick={event => event.stopPropagation()}>
             <select onChange={handleChange} defaultValue="select-character">
                 <option disabled value="select-character">Select A Character</option>
                 <option value="c1placeholder">C1 Placeholder</option>

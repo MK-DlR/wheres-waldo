@@ -37,6 +37,7 @@ function ImageParent() {
         setClickLocation(null);
     }
 
+    // conditionally display dropdown
     return (
         <div className="img-and-dropdown">
             <DisplayImage onImageClick={detectClick}>
