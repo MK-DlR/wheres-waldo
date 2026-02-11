@@ -26,14 +26,18 @@ function ImageParent(props) {
 
     // detect x/y click coordinates and convert to percentages
     function detectClick(event) {
-        const rect = event.target.getBoundingClientRect();
-        const xPercent = event.nativeEvent.offsetX / rect.width * 100;
-        const yPercent = event.nativeEvent.offsetY / rect.height * 100;
+        if (clickLocation) {
+            setClickLocation(null);
+        } else {
+            const rect = event.target.getBoundingClientRect();
+            const xPercent = event.nativeEvent.offsetX / rect.width * 100;
+            const yPercent = event.nativeEvent.offsetY / rect.height * 100;
 
-        setClickLocation({ 
-            x: xPercent, 
-            y: yPercent
-        });
+            setClickLocation({ 
+                x: xPercent, 
+                y: yPercent
+            });
+        }
 
         console.log(clickLocation)
     }
