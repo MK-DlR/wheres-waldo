@@ -26,3 +26,21 @@ body {
   display: flex;
   gap: 10px;
 }
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.character-icon {
+  width: 50px;
+  border-radius: 4px;;
+}

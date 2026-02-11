@@ -1,6 +1,5 @@
 // frontend/src/FindCharacters.jsx
 
-
 function FindCharacters(props) {
     if (props.status === "loading") return <p>Loading...</p>;
     if (props.status === "error") return <p>Something went wrong!</p>;
@@ -9,7 +8,7 @@ function FindCharacters(props) {
         <div className="characters-container">
           {props.characters.map((character) => (
             <div key={character.id} className="characters-card">
-              <img src={character.image} alt={character.name} />
+              <img src={character.image} className="character-icon" alt={character.name} />
               <p>{character.name}</p>
             </div>
           ))}
