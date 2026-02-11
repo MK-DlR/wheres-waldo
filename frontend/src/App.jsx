@@ -53,7 +53,6 @@ function App() {
     
   return (
     <>
-      <h1>Image Tagger</h1>
       <div className="card">
         <FindCharacters characters={characters} status={status} />
         <ImageParent characters={characters} />

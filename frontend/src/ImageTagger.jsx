@@ -37,14 +37,31 @@ function ImageParent(props) {
                 x: xPercent, 
                 y: yPercent
             });
+            console.log('New click:', xPercent, yPercent);
         }
-
-        console.log(clickLocation)
     }
 
     // select character and close dropdown
     function characterSelection(value) {
         console.log(`${value} was selected at x: ${clickLocation.x}, y: ${clickLocation.y}`);
+        
+        // POST fetch request to backend
+        fetch(`${import.meta.env.VITE_API_URL}/characters/verify`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: value, x: clickLocation.x, y: clickLocation.y })
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((response) => {
+            console.log(response.success);
+        })
+        .catch((err) => {
+            // set status state variable to "error"
+            console.error(err);
+        })
+        
         setClickLocation(null);
     }
 

@@ -5,6 +5,7 @@ const { prisma } = require("../lib/prisma");
 
 const router = express.Router();
 
+// get 3 random characters from character pool
 router.get("/", async (req, res) => {
   try {
     // get all characters
@@ -22,6 +23,45 @@ router.get("/", async (req, res) => {
     }
 
     return res.send(characters.slice(0, 3));
+  } catch (error) {
+    res.status(404).json({ error: "Not found" });
+  }
+});
+
+// verify user's character guess
+router.post("/verify", async (req, res) => {
+  try {
+    // extract character name and coords
+    const { name, x, y } = req.body;
+
+    // search for character by name
+    const result = await prisma.character.findFirst({
+      where: {
+        name: name,
+      },
+    });
+    if (result) {
+      // determine difference tolerance allowed for coord guess
+      const xDifference = Math.abs(x - result.x_coord);
+      const yDifference = Math.abs(y - result.y_coord);
+
+      console.log("Clicked:", x, y);
+      console.log("Stored:", result.x_coord, result.y_coord);
+      console.log("Differences:", xDifference, yDifference);
+
+      // compare x and y coords to difference tolerance
+      if (xDifference <= 1 && yDifference <= 1) {
+        // TO DO: implement some kind of popup/notif that the guess is correct
+        // and put marker on spot they clicked
+        res.json({ success: true });
+      } else {
+        // TO DO: implement some kind of popup/notif that the guess is incorrect
+        res.json({ success: false });
+      }
+    } else {
+      // TO DO: implement some kind of popup/notif that the guess is incorrect
+      res.json({ success: false });
+    }
   } catch (error) {
     res.status(404).json({ error: "Not found" });
   }
