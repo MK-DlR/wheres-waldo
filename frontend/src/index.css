@@ -12,6 +12,7 @@ body {
   cursor: url("./images/cursorLg.png") 32 32, auto;
 }
 
+/* main image */
 .main-image img {
   display: block;
   margin: 0;
@@ -22,25 +23,44 @@ body {
   display: inline-block;
 }
 
+/* characters to find */
 .characters-container {
   display: flex;
   gap: 10px;
 }
 
+/* shared character icons */
+.character-icon {
+  width: 50px;
+  border-radius: 4px;
+}
+
+/* select character dropdown */
 ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  background-color: rgb(182, 182, 182);
+  border: 3px solid black;
+  border-radius: 4px;
 }
 
-.dropdown li {
+ul li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+  padding: 5px;
+  border-bottom: 1px solid black;
 }
 
-.character-icon {
-  width: 50px;
-  border-radius: 4px;;
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li:hover {
+  background-color: rgb(145, 145, 145);
+}
+
+.select-character:hover .character-icon {
+  filter: brightness(75%);
 }
