@@ -36,6 +36,15 @@ body {
   border-radius: 4px;
 }
 
+.characters-card.found {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.characters-card.found img {
+  filter: grayscale(100%);
+}
+
 /* select character dropdown */
 ul {
   list-style-type: none;

@@ -26,7 +26,7 @@ function ImageParent(props) {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
     // found character state array
-    const [foundCharacters, setFoundCharacters] = useState([]);
+    // const [foundCharacters, setFoundCharacters] = useState([]);
 
     // detect x/y click coordinates and convert to percentages
     function detectClick(event) {
@@ -63,11 +63,11 @@ function ImageParent(props) {
         .then((response) => {
             if (response.success) {
                 // check if found character is already in array
-                if (foundCharacters.some(e => e.name === value)) {
+                if (props.foundCharacters.some(e => e.name === value)) {
                     return;
                 }
                 // if not, add found character to array
-                setFoundCharacters([...foundCharacters, 
+                props.setFoundCharacters([...props.foundCharacters, 
                     { 
                         name: value, 
                         x: clickLocation.x, 
@@ -94,11 +94,11 @@ function ImageParent(props) {
                             position={clickLocation} 
                             onSelectCharacter={characterSelection} 
                             characters={props.characters}
-                            foundCharacters={foundCharacters} />
+                            foundCharacters={props.foundCharacters} />
                         <Targeting position={clickLocation} />
                     </>
                 ) : null}
-                {foundCharacters.map((character) => (
+                {props.foundCharacters.map((character) => (
                     <FoundMarker key={character.name} position={{x: character.x, y: character.y}} />
                 ))}
             </DisplayImage>

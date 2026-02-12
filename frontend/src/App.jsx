@@ -8,6 +8,7 @@ import FindCharacters from './FindCharacters'
 function App() {
   const [status, setStatus] = useState("loading");
   const [characters, setCharacters] = useState([])
+  const [foundCharacters, setFoundCharacters] = useState([]);
   
   // fetch data on component mount
     useEffect(() => {
@@ -54,8 +55,16 @@ function App() {
   return (
     <>
       <div className="card">
-        <FindCharacters characters={characters} status={status} />
-        <ImageParent characters={characters} />
+        <FindCharacters 
+          characters={characters} 
+          status={status} 
+          foundCharacters={foundCharacters} 
+        />
+        <ImageParent
+          characters={characters} 
+          foundCharacters={foundCharacters} 
+          setFoundCharacters={setFoundCharacters} 
+        />
       </div>
     </>
   )
