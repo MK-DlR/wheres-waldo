@@ -25,6 +25,8 @@ function DisplayImage(props) {
 function ImageParent(props) {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
+    // found character state array
+    const [foundCharacters, setFoundCharacters] = useState([]);
 
     // detect x/y click coordinates and convert to percentages
     function detectClick(event) {
@@ -59,7 +61,17 @@ function ImageParent(props) {
             return response.json();
         })
         .then((response) => {
+            // add found character to array
+            if (response.success) {
+                setFoundCharacters([...foundCharacters, 
+                    { 
+                        name: value, 
+                        x: clickLocation.x, 
+                        y: clickLocation.y 
+                    }])
+            }
             console.log(response.success);
+            console.log(foundCharacters)
         })
         .catch((err) => {
             // set status state variable to "error"
@@ -82,6 +94,9 @@ function ImageParent(props) {
                         <Targeting position={clickLocation} />
                     </>
                 ) : null}
+                {foundCharacters.map((character) => (
+                    <FoundMarker key={character.name} position={{x: character.x, y: character.y}} />
+                ))}
             </DisplayImage>
         </div>
     )
