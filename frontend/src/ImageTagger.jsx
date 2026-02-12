@@ -20,6 +20,7 @@ function DisplayImage(props) {
     );
 }
 
+// image parent component
 function ImageParent(props) {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
@@ -33,10 +34,12 @@ function ImageParent(props) {
             const xPercent = event.nativeEvent.offsetX / rect.width * 100;
             const yPercent = event.nativeEvent.offsetY / rect.height * 100;
 
+            // assign click location
             setClickLocation({ 
                 x: xPercent, 
                 y: yPercent
             });
+
             console.log('New click:', xPercent, yPercent);
         }
     }
