@@ -25,8 +25,6 @@ function DisplayImage(props) {
 function ImageParent(props) {
     // image location clicked state
     const [clickLocation, setClickLocation] = useState(null)
-    // found character state array
-    // const [foundCharacters, setFoundCharacters] = useState([]);
 
     // detect x/y click coordinates and convert to percentages
     function detectClick(event) {

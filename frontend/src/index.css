@@ -21,10 +21,21 @@ body {
 }
 
 .main-image {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* characters to find */
+/* characters to find and timer header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .characters-container {
   display: flex;
   gap: 10px;

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import ImageParent from './ImageTagger'
 import FindCharacters from './FindCharacters'
+import Timer from "./Timer";
 
 function App() {
   const [status, setStatus] = useState("loading");
@@ -31,8 +32,7 @@ function App() {
                 throw error;
               });
           } else {
-            // success state - return character data
-            return response.json();
+            return response.json(); // success state - return character data
           }
         });
       }
@@ -40,14 +40,12 @@ function App() {
       // fetch data
       sendFetchRequest("GET", `${import.meta.env.VITE_API_URL}/characters`)
         .then((res) => {
-          // set status state variable to "success"
           setCharacters(res);
-          setStatus("success");
+          setStatus("success");  // set status state variable to "success"
           console.log(res);
         })
         .catch((err) => {
-          // set status state variable to "error"
-          setStatus("error");
+          setStatus("error"); // set status state variable to "error"
           console.error(err);
         });
     }, []);
@@ -55,11 +53,15 @@ function App() {
   return (
     <>
       <div className="card">
-        <FindCharacters 
-          characters={characters} 
-          status={status} 
-          foundCharacters={foundCharacters} 
-        />
+        <div className="header">
+          <FindCharacters 
+            characters={characters} 
+            status={status} 
+            foundCharacters={foundCharacters} 
+            className="find-characters"
+          />
+          <Timer className="timer" />
+        </div>
         <ImageParent
           characters={characters} 
           foundCharacters={foundCharacters} 
