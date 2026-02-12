@@ -8,13 +8,29 @@ function Dropdown(props) {
         left: `${props.position.x - 4.5}%`
     }
 
+    // exclude any characters whose names are in foundCharacters array
+    const filteredCharacters = props.characters.filter(
+        (character) =>
+            !props.foundCharacters.some(
+                (found) => found.name === character.name
+            )
+    );
+
     return (
         <form style={dropdownStyle} className="dropdown" onClick={event => event.stopPropagation()}>
             <ul>
-                {props.characters.map((character) => (
-                    <li key={character.id} className="select-character" onClick={() => props.onSelectCharacter(character.name)}>
-                        <img src={character.image} className="character-icon" alt={character.name} />
-                        <span>{character.name}</span>
+                {filteredCharacters.map((character) => (
+                    <li
+                    key={character.id}
+                    className="select-character"
+                    onClick={() => props.onSelectCharacter(character.name)}
+                    >
+                    <img
+                        src={character.image}
+                        className="character-icon"
+                        alt={character.name}
+                    />
+                    <span>{character.name}</span>
                     </li>
                 ))}
             </ul>

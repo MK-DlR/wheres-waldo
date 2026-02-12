@@ -75,7 +75,6 @@ function ImageParent(props) {
                     }])
             }
             console.log(response.success);
-            console.log(foundCharacters)
         })
         .catch((err) => {
             // set status state variable to "error"
@@ -94,7 +93,8 @@ function ImageParent(props) {
                         <Dropdown 
                             position={clickLocation} 
                             onSelectCharacter={characterSelection} 
-                            characters={props.characters} />
+                            characters={props.characters}
+                            foundCharacters={foundCharacters} />
                         <Targeting position={clickLocation} />
                     </>
                 ) : null}
