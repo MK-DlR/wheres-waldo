@@ -4,6 +4,7 @@ import { useState } from "react";
 import mainImage from "/images/mainImage.png";
 import Dropdown from './Dropdown';
 import Targeting from "./Targeting";
+import FoundMarker from "./FoundMarker";
 
 // render image
 function DisplayImage(props) {
