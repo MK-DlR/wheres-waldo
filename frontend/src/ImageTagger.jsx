@@ -61,8 +61,12 @@ function ImageParent(props) {
             return response.json();
         })
         .then((response) => {
-            // add found character to array
             if (response.success) {
+                // check if found character is already in array
+                if (foundCharacters.some(e => e.name === value)) {
+                    return;
+                }
+                // if not, add found character to array
                 setFoundCharacters([...foundCharacters, 
                     { 
                         name: value, 
