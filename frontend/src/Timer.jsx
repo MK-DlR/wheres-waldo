@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 
-function Timer() {
+function Timer({ shouldStop }) {
     const [time, setTime] = useState(0); // elapsed ms
-    const [running, setRunning] = useState(false);
+    const [running, setRunning] = useState(true); // auto-start on mount
     const startTimeRef = useRef(0); // absolute start timestamp
     const elapsedBeforeRef = useRef(0); // accumulated time before last start
     const intervalRef = useRef(null);
@@ -22,6 +22,7 @@ function Timer() {
         );
     }
 
+    // timer count
     useEffect(() => {
         if (running) {
             startTimeRef.current = Date.now() - elapsedBeforeRef.current;
@@ -36,20 +37,17 @@ function Timer() {
         return () => clearInterval(intervalRef.current);
     }, [running]);
 
-    function handleStartStop() {
-        if (running) {
-            // stop: save elapsed for next resume
-            elapsedBeforeRef.current = time;
+    // stop timer when all characters found
+    useEffect(() => {
+        if (shouldStop === true) {
+            // eslint-disable-next-line
             setRunning(false);
-        } else {
-            setRunning(true);
         }
-    }
+    }, [shouldStop])
 
     return (
         <div>
             <h1>{formatTime(time)}</h1>
-            <button onClick={handleStartStop}>{running ? "Stop" : "Start"}</button>
         </div>
     );
 }
