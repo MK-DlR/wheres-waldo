@@ -1,6 +1,7 @@
 // frontend/src/App.jsx
 
 import { useState, useEffect } from "react";
+import { Toaster } from 'react-hot-toast';
 
 import ImageParent from './ImageTagger'
 import FindCharacters from './FindCharacters'
@@ -52,6 +53,7 @@ function App() {
     
   return (
     <>
+      <Toaster position="top-center" />
       <div className="card">
         <div className="header">
           <FindCharacters 

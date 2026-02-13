@@ -1,6 +1,8 @@
 // frontend/src/ImageTagger.jsx
 
 import { useState } from "react";
+import toast from "react-hot-toast";
+
 import mainImage from "/images/mainImage.png";
 import Dropdown from './Dropdown';
 import Targeting from "./Targeting";
@@ -82,11 +84,13 @@ function ImageParent(props) {
                         x: clickLocation.x, 
                         y: clickLocation.y 
                     }])
+                toast.success("Found it!");
+            } else {
+                toast.error("Try again");
             }
-            console.log(response.success);
         })
         .catch((err) => {
-            // set status state variable to "error"
+            toast.error("Network error")
             console.error(err);
         })
         

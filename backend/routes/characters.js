@@ -51,15 +51,11 @@ router.post("/verify", async (req, res) => {
 
       // compare x and y coords to difference tolerance
       if (xDifference <= 1 && yDifference <= 1) {
-        // TO DO: implement some kind of popup/notif that the guess is correct
-        // and put marker on spot they clicked
         res.json({ success: true });
       } else {
-        // TO DO: implement some kind of popup/notif that the guess is incorrect
         res.json({ success: false });
       }
     } else {
-      // TO DO: implement some kind of popup/notif that the guess is incorrect
       res.json({ success: false });
     }
   } catch (error) {
