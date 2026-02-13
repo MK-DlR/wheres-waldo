@@ -12,7 +12,7 @@ import FoundMarker from "./FoundMarker";
 function DisplayImage(props) {
     return (
     <div className="main-image" style={{ padding: 0, margin: 0 }}>
-        <div style={{ position: 'relative', width: '100%' }}>  {/* Removed display: inline-block */}
+        <div style={{ position: 'relative', width: '100%' }}>
             <img 
                 src={mainImage} 
                 onClick={props.onImageClick} 
