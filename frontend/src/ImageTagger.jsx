@@ -11,11 +11,17 @@ function DisplayImage(props) {
     return (
     <div className="main-image" style={{ padding: 0, margin: 0 }}>
         <div style={{ position: 'relative', display: 'inline-block' }}>
-            <img 
+        <img 
                 src={mainImage} 
                 onClick={props.onImageClick} 
                 alt="The Raid by Laurie Greasley"
-                style={{ display: 'block', margin: 0, padding: 0 }}
+                style={{ 
+                    display: 'block', 
+                    margin: 0, 
+                    padding: 0,
+                    maxWidth: '100%',
+                    height: 'auto'
+                }}
             />
             {props.children}
         </div>
