@@ -28,12 +28,15 @@ body {
 
 /* characters to find and timer header */
 .header {
+  position: sticky;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  justify-content: space-around;
+  top: 0;
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  z-index: 1;
 }
 
 .characters-container {

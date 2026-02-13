@@ -9,14 +9,16 @@ import FoundMarker from "./FoundMarker";
 // render image
 function DisplayImage(props) {
     return (
-    <div className="main-image" style={{ padding: 0, margin: 0, position: 'relative' }}>
-        <img 
-            src={mainImage} 
-            onClick={props.onImageClick} 
-            alt="The Raid by Laurie Greasley"
-            style={{ display: 'block', margin: 0, padding: 0 }}
-        />
-        {props.children}
+    <div className="main-image" style={{ padding: 0, margin: 0 }}>
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+            <img 
+                src={mainImage} 
+                onClick={props.onImageClick} 
+                alt="The Raid by Laurie Greasley"
+                style={{ display: 'block', margin: 0, padding: 0 }}
+            />
+            {props.children}
+        </div>
     </div>
     );
 }
@@ -31,9 +33,12 @@ function ImageParent(props) {
         if (clickLocation) {
             setClickLocation(null);
         } else {
+            // Get the IMAGE's bounding rect (not the container)
             const rect = event.target.getBoundingClientRect();
-            const xPercent = event.nativeEvent.offsetX / rect.width * 100;
-            const yPercent = event.nativeEvent.offsetY / rect.height * 100;
+            
+            // Calculate relative to viewport, accounting for scroll and image position
+            const xPercent = ((event.clientX - rect.left) / rect.width) * 100;
+            const yPercent = ((event.clientY - rect.top) / rect.height) * 100;
 
             // assign click location
             setClickLocation({ 
