@@ -12,8 +12,8 @@ import FoundMarker from "./FoundMarker";
 function DisplayImage(props) {
     return (
     <div className="main-image" style={{ padding: 0, margin: 0 }}>
-        <div style={{ position: 'relative', display: 'inline-block' }}>
-        <img 
+        <div style={{ position: 'relative', width: '100%' }}>  {/* Removed display: inline-block */}
+            <img 
                 src={mainImage} 
                 onClick={props.onImageClick} 
                 alt="The Raid by Laurie Greasley"
@@ -21,7 +21,7 @@ function DisplayImage(props) {
                     display: 'block', 
                     margin: 0, 
                     padding: 0,
-                    maxWidth: '100%',
+                    width: '100%',
                     height: 'auto'
                 }}
             />
