@@ -12,6 +12,7 @@ function App() {
   const [status, setStatus] = useState("loading");
   const [characters, setCharacters] = useState([])
   const [foundCharacters, setFoundCharacters] = useState([]);
+  const [gameComplete, setGameComplete] = useState(false);
   
   // modal and timer state
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -61,6 +62,14 @@ function App() {
     setIsModalOpen(false);
     setTimerStarted(true);
   };
+
+  // determine if all characters have been found
+  useEffect(() => {
+    if (characters.length > 0 && foundCharacters.length === characters.length) {
+      // eslint-disable-next-line
+      setGameComplete(true);
+    }
+  }, [foundCharacters, characters])
     
   return (
     <>
@@ -74,7 +83,7 @@ function App() {
             foundCharacters={foundCharacters} 
             className="find-characters"
           />
-          {timerStarted && <Timer className="timer" />}
+          {timerStarted && <Timer className="timer" shouldStop={gameComplete} />}
         </div>
         <ImageParent
           characters={characters} 
