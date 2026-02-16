@@ -96,6 +96,10 @@ function App() {
           foundCharacters={foundCharacters} 
           setFoundCharacters={setFoundCharacters} 
         />
+        <p className="credits">
+          Game by <a href="https://github.com/MK-DlR">MK-DlR</a>
+          <br></br>
+          <a href="https://www.debutart.com/artist/laurie-greasley/the-raid">The Raid by Laurie Greasley</a> | <a href="https://www.flaticon.com/free-icons/aim">Aim Icon by Freepik - Flaticon</a></p>
       </div>
     </>
   )

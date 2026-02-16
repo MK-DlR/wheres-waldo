@@ -35,7 +35,7 @@ body {
   justify-content: space-around;
   top: 0;
   padding: 10px 16px;
-  background: #555;
+  background: #2a2a2a;;
   color: #f1f1f1;
   z-index: 1;
 }
@@ -95,4 +95,17 @@ ul li:hover {
 
 .select-character:hover .character-icon {
   filter: brightness(75%);
+}
+
+/* credit footer */
+.credits {
+  height: 50px;
+  background: #2a2a2a;;
+  font-size: 12px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.credits, .credits a {
+  color: white;
 }
