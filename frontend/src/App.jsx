@@ -73,7 +73,13 @@ function App() {
     
   return (
     <>
-      <StartModal isOpen={isModalOpen} onStart={handleStart} />
+      <StartModal 
+        isOpen={isModalOpen} 
+        onStart={handleStart} 
+        characters={characters} 
+        status={status} 
+        foundCharacters={foundCharacters}
+      />
       <Toaster position="top-center" />
       <div className="card">
         <div className="header">

@@ -32,6 +32,10 @@
     line-height: 1.6;
 }
 
+.modal-content .characters-container {
+    justify-content: center;
+}
+
 .start-button {
     background-color: #ffa500;
     color: #000;
