@@ -4,8 +4,11 @@ function Dropdown(props) {
     // position dropdown box at click point
     const dropdownStyle = {
         position: 'absolute',
-        top: `${props.position.y + 2.5}%`,
-        left: `${props.position.x - 4.5}%`
+        top: `${props.position.y}%`,
+        left: `${props.position.x}%`,
+        transform: props.position.y > 85
+        ? 'translate(-42.5px, calc(-100% - 45px))'
+        : 'translate(-42.5px, 45px)'
     }
 
     // exclude any characters whose names are in foundCharacters array
