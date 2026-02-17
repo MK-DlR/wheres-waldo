@@ -8,8 +8,8 @@ function Targeting(props) {
         left: `${props.position.x}%`,
         transform: 'translate(-50%, -50%)',
         border: '4px solid red',
-        width: '85px',
-        height: '85px'
+        width: '75px',
+        height: '75px'
     }
 
     return <div style={targetingStyle}></div>
