@@ -80,7 +80,7 @@ function App() {
   // handle NameModal submit
   function submitHandler(name) {
     // POST fetch request to backend
-    fetch(`${import.meta.env.VITE_API_URL}/submit`, {
+    fetch(`${import.meta.env.VITE_API_URL}/scores/submit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, time })

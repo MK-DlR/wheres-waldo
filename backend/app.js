@@ -26,6 +26,9 @@ app.get("/", (req, res) => {
 const charactersRouter = require("./routes/characters");
 app.use("/characters", charactersRouter);
 
+const scoresRouter = require("./routes/scores");
+app.use("/scores", scoresRouter);
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: "Not found" });
