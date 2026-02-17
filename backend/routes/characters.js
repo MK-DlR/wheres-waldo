@@ -45,10 +45,6 @@ router.post("/verify", async (req, res) => {
       const xDifference = Math.abs(x - result.x_coord);
       const yDifference = Math.abs(y - result.y_coord);
 
-      console.log("Clicked:", x, y);
-      console.log("Stored:", result.x_coord, result.y_coord);
-      console.log("Differences:", xDifference, yDifference);
-
       // compare x and y coords to difference tolerance
       if (xDifference <= 1 && yDifference <= 1) {
         res.json({ success: true });
