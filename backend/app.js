@@ -15,7 +15,11 @@ const app = express();
 app.use(express.json()); // parse json for apis
 app.use(express.urlencoded({ extended: true })); // parse form data
 app.use(express.static(path.join(__dirname, "public"))); // static files
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  }),
+);
 
 // routes
 // home route (before routers)
