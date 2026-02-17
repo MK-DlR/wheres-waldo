@@ -13,7 +13,7 @@ function StartModal({ isOpen, onStart, characters, status, foundCharacters }) {
         <h1>How to Play</h1>
         <div className="instructions">
           <p>Find the characters displayed below as quickly as you can.</p>
-          <p>The timer will start as soon as "START" is pressed.</p>
+          <p>The timer will begin as soon as "START" is pressed.</p>
           <br></br>
           <FindCharacters 
             characters={characters} 
