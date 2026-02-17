@@ -1,6 +1,17 @@
 // frontend/src/Dropdown.jsx
 
 function Dropdown(props) {
+    // exclude any characters whose names are in foundCharacters array
+    const filteredCharacters = props.characters.filter(
+        (character) =>
+            !props.foundCharacters.some(
+                (found) => found.name === character.name
+            )
+    );
+
+    // don't render anything if all characters are found
+    if (filteredCharacters.length === 0) return null;
+
     const nearBottom = props.position.y > 85;
     const nearRight = props.position.x > 85;
 
@@ -14,14 +25,6 @@ function Dropdown(props) {
         left: `${props.position.x}%`,
         transform: `translate(${translateX}, ${translateY})`
     }
-
-    // exclude any characters whose names are in foundCharacters array
-    const filteredCharacters = props.characters.filter(
-        (character) =>
-            !props.foundCharacters.some(
-                (found) => found.name === character.name
-            )
-    );
 
     return (
         <form style={dropdownStyle} className="dropdown" onClick={event => event.stopPropagation()}>

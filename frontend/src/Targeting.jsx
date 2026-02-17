@@ -9,7 +9,7 @@ function Targeting(props) {
         transform: 'translate(-50%, -50%)',
         border: '4px solid red',
         width: '75px',
-        height: '75px'
+        height: '75px',
     }
 
     return <div style={targetingStyle}></div>
