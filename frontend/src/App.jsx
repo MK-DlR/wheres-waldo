@@ -76,6 +76,16 @@ function App() {
       setIsNameModalOpen(true);
     }
   }, [foundCharacters, characters])
+
+  // handle NameModal submit
+  function submitHandler(name) {
+    // POST fetch request to backend
+    fetch(`${import.meta.env.VITE_API_URL}/submit`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, time })
+    })
+  }
     
   return (
     <>
@@ -88,8 +98,8 @@ function App() {
       />
       <NameModal
         isOpen={isNameModalOpen}
-        // close handler
-        // submit handler
+        onClose={() => setIsNameModalOpen(false)}
+        onSubmit={submitHandler}
       />
       <Toaster position="top-center" />
       <div className="card">
