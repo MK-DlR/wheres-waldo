@@ -128,12 +128,10 @@ exports.Prisma.CharacterScalarFieldEnum = {
   image: 'image'
 };
 
-exports.Prisma.GameSessionScalarFieldEnum = {
+exports.Prisma.ScoreScalarFieldEnum = {
   id: 'id',
-  sessionId: 'sessionId',
-  startTime: 'startTime',
-  endTime: 'endTime',
-  playerName: 'playerName'
+  name: 'name',
+  time: 'time'
 };
 
 exports.Prisma.SortOrder = {
@@ -146,15 +144,10 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-
 
 exports.Prisma.ModelName = {
   Character: 'Character',
-  GameSession: 'GameSession'
+  Score: 'Score'
 };
 
 /**

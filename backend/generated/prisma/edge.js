@@ -100,12 +100,10 @@ exports.Prisma.CharacterScalarFieldEnum = {
   image: 'image'
 };
 
-exports.Prisma.GameSessionScalarFieldEnum = {
+exports.Prisma.ScoreScalarFieldEnum = {
   id: 'id',
-  sessionId: 'sessionId',
-  startTime: 'startTime',
-  endTime: 'endTime',
-  playerName: 'playerName'
+  name: 'name',
+  time: 'time'
 };
 
 exports.Prisma.SortOrder = {
@@ -118,15 +116,10 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-
 
 exports.Prisma.ModelName = {
   Character: 'Character',
-  GameSession: 'GameSession'
+  Score: 'Score'
 };
 /**
  * Create the Client
@@ -136,10 +129,10 @@ const config = {
   "clientVersion": "7.3.0",
   "engineVersion": "9d6ad21cbbceab97458517b147a6a09ff43aa735",
   "activeProvider": "postgresql",
-  "inlineSchema": "// backend/prisma/schema.prisma\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Character {\n  id      Int    @id @default(autoincrement())\n  name    String\n  x_coord Float\n  y_coord Float\n  image   String\n}\n\nmodel GameSession {\n  id         Int       @id @default(autoincrement())\n  sessionId  String    @unique\n  startTime  DateTime\n  endTime    DateTime?\n  playerName String?\n}\n"
+  "inlineSchema": "// backend/prisma/schema.prisma\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Character {\n  id      Int    @id @default(autoincrement())\n  name    String\n  x_coord Float\n  y_coord Float\n  image   String\n}\n\nmodel Score {\n  id   Int    @id @default(autoincrement())\n  name String\n  time Int\n}\n"
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Character\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"x_coord\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"y_coord\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"image\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"GameSession\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"sessionId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"startTime\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"endTime\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"playerName\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Character\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"x_coord\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"y_coord\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"image\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Score\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"time\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.compilerWasm = {
   getRuntime: async () => require('./query_compiler_fast_bg.js'),
