@@ -2,7 +2,7 @@
 
 TOP where's waldo style photo tagger project
 
-live preview:
+live preview: https://wheres-waldo-vert.vercel.app
 
 create a "where's waldo" style game
 where users are tasked to find specific characters
