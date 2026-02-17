@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   cursor: url("./images/cursorLg.png") 32 32, auto;
+  background-color: #2a2a2a;
 }
 
 /* main image */
@@ -73,7 +74,7 @@ ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  background-color: rgb(182, 182, 182);
+  background-color: #2a2a2a;
   border: 3px solid black;
   border-radius: 4px;
 }
@@ -83,6 +84,7 @@ ul li {
   align-items: center;
   gap: 5px;
   padding: 5px;
+  color: white;
   border-bottom: 1px solid black;
 }
 
@@ -91,7 +93,8 @@ ul li:last-child {
 }
 
 ul li:hover {
-  background-color: rgb(145, 145, 145);
+  background-color: #1a1a1a;
+  transition-duration: 0.4s;
 }
 
 .select-character:hover .character-icon {
