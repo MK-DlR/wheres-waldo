@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { Toaster } from 'react-hot-toast';
 
 import StartModal from "./StartModal";
+import Timer from "./Timer";
 import ImageParent from './ImageTagger'
 import FindCharacters from './FindCharacters'
-import Timer from "./Timer";
+import NameModal from "./NameModal";
 
 function App() {
   const [status, setStatus] = useState("loading");
@@ -14,9 +15,13 @@ function App() {
   const [foundCharacters, setFoundCharacters] = useState([]);
   const [gameComplete, setGameComplete] = useState(false);
   
-  // modal and timer state
+  // start modal and timer state
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [timerStarted, setTimerStarted] = useState(false);
+  const [time, setTime] = useState(0); // elapsed ms
+
+  // end modal state
+  const [isNameModalOpen, setIsNameModalOpen] = useState(false);
   
   // fetch data on component mount
   useEffect(() => {
@@ -68,6 +73,7 @@ function App() {
     if (characters.length > 0 && foundCharacters.length === characters.length) {
       // eslint-disable-next-line
       setGameComplete(true);
+      setIsNameModalOpen(true);
     }
   }, [foundCharacters, characters])
     
@@ -80,6 +86,11 @@ function App() {
         status={status} 
         foundCharacters={foundCharacters}
       />
+      <NameModal
+        isOpen={isNameModalOpen}
+        // close handler
+        // submit handler
+      />
       <Toaster position="top-center" />
       <div className="card">
         <div className="header">
@@ -89,7 +100,13 @@ function App() {
             foundCharacters={foundCharacters} 
             className="find-characters"
           />
-          {timerStarted && <Timer className="timer" shouldStop={gameComplete} />}
+          {timerStarted && 
+            <Timer 
+              className="timer" 
+              shouldStop={gameComplete} 
+              time={time} 
+              setTime={setTime}
+            />}
         </div>
         <ImageParent
           characters={characters} 

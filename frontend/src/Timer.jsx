@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-function Timer({ shouldStop }) {
-    const [time, setTime] = useState(0); // elapsed ms
+function Timer({ shouldStop, time,setTime }) {
     const [running, setRunning] = useState(true); // auto-start on mount
     const startTimeRef = useRef(0); // absolute start timestamp
     const elapsedBeforeRef = useRef(0); // accumulated time before last start
@@ -35,7 +34,7 @@ function Timer({ shouldStop }) {
         }
 
         return () => clearInterval(intervalRef.current);
-    }, [running]);
+    }, [running, setTime]);
 
     // stop timer when all characters found
     useEffect(() => {
