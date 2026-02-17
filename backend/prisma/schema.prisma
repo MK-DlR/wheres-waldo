@@ -17,10 +17,8 @@ model Character {
   image   String
 }
 
-model GameSession {
-  id         Int       @id @default(autoincrement())
-  sessionId  String    @unique
-  startTime  DateTime
-  endTime    DateTime?
-  playerName String?
+model Score {
+  id   Int    @id @default(autoincrement())
+  name String
+  time Int
 }
