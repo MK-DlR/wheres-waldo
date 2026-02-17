@@ -1,6 +1,7 @@
 // frontend/src/NameModal.jsx
 
 import { useState } from "react";
+import './NameModal.css';
 
 function NameModal({ isOpen, onClose, onSubmit }) {
     const [name, setName] = useState("");
@@ -16,20 +17,20 @@ function NameModal({ isOpen, onClose, onSubmit }) {
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2>Enter your name</h2>
-            <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-                autoFocus
-            />
-            <button type="submit">Save</button>
-            <button type="button" onClick={onClose}>Cancel</button>
-            </form>
-        </div>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <h1>Enter Your Name</h1>
+                <div className="instructions">
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your name"
+                        autoFocus
+                    />
+                </div>
+                <button className="submit-button" onClick={handleSubmit}>SAVE</button>
+                <button className="cancel-button" onClick={onClose}>CANCEL</button>
+            </div>
         </div>
     );
 }
