@@ -1,8 +1,8 @@
-// frontend/src/NameModal.jsx
+// frontend/src/components/NameModal.jsx
 
 import { useState } from "react";
-import './styles/NameModal.css';
-import "./styles/theme.css";
+import '../styles/NameModal.css';
+import '../styles/theme.css';
 
 function NameModal({ isOpen, onClose, onSubmit }) {
     const [name, setName] = useState("");

@@ -1,11 +1,11 @@
-// frontend/src/ImageTagger.jsx
+// frontend/src/components/ImageTagger.jsx
 
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 import mainImage from "/images/mainImage.png";
 import Dropdown from './Dropdown';
-import Targeting from "./Targeting";
+import Targeting from "../helpers/Targeting";
 import FoundMarker from "./FoundMarker";
 
 // render image

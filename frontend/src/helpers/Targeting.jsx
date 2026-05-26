@@ -1,4 +1,4 @@
-// frontend/src/Targeting.jsx
+// frontend/src/helpers/Targeting.jsx
 
 function Targeting(props) {
     // position targeting box centered around click point

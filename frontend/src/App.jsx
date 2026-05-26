@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import { Toaster } from 'react-hot-toast';
 
-import StartModal from "./StartModal";
-import Timer from "./Timer";
-import ImageParent from './ImageTagger'
-import FindCharacters from './FindCharacters'
-import NameModal from "./NameModal";
+import StartModal from "./components/StartModal";
+import Timer from "./components/Timer";
+import ImageParent from './components/ImageTagger'
+import FindCharacters from './components/FindCharacters'
+import NameModal from "./components/NameModal";
 
 function App() {
   const [status, setStatus] = useState("loading");

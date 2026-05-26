@@ -1,4 +1,4 @@
-// frontend/src/Timer.jsx
+// frontend/src/components/Timer.jsx
 
 import { useState, useRef, useEffect } from "react";
 

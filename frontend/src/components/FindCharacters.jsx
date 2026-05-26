@@ -1,4 +1,4 @@
-// frontend/src/FindCharacters.jsx
+// frontend/src/components/FindCharacters.jsx
 
 function FindCharacters(props) {
   if (props.status === "loading") return <p>Loading...</p>;

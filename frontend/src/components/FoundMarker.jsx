@@ -1,4 +1,4 @@
-// frontend/src/FoundMarker.jsx
+// frontend/src/components/FoundMarker.jsx
 
 function FoundMarker(props) {
     // position found marker pin on selected spot

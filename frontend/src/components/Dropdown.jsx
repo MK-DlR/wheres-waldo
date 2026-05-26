@@ -1,4 +1,4 @@
-// frontend/src/Dropdown.jsx
+// frontend/src/components/Dropdown.jsx
 
 function Dropdown(props) {
     // exclude any characters whose names are in foundCharacters array
