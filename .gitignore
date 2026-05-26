@@ -5,10 +5,7 @@ node_modules/
 .env
 
 # Prisma generated files
-backend/prisma/generated/
-
-# Build outputs
-frontend/dist/
+**/generated/prisma/
 
 # Logs and OS files
 *.log
