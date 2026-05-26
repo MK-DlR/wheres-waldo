@@ -32,7 +32,7 @@ function App() {
       return fetch(url, {
         method,
         body: JSON.stringify(data),
-        header: data
+        headers: data
           ? {
               "Content-Type": "application/json",
             }
