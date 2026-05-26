@@ -1,0 +1,52 @@
+/* frontend/src/styles/theme.css */
+
+:root {
+    /* base backgrounds */
+    --bg-primary: #1a1625;
+    --bg-secondary: #2a2235;
+    --bg-elevated: #342d42;
+    --bg-card: #252030;
+    --bg-overlay: rgba(26, 22, 37, 0.9);
+    --bg-glass: rgba(52, 45, 66, 0.7);
+
+    /* neon accents */
+    --accent-cyan: #00d9ff;
+    --accent-cyan-dim: #0099aa;
+    --accent-magenta: #ff1493;
+    --accent-magenta-dim: #aa0066;
+    --accent-orange: #ff8c42;
+    --accent-orange-dim: #cc6633;
+    
+    /* text */
+    --text-primary: #f1f1f1;
+    --text-secondary: #a9a9a9;
+    --text-accent: var(--accent-cyan);
+    --text-muted: #6b6b6b;
+    
+    /* functional colors */
+    --color-success: #00ff88;
+    --color-error: #ff4466;
+    --color-warning: var(--accent-orange);
+    --color-target: var(--accent-cyan);
+    --color-found: var(--accent-magenta);
+    
+    /* glows (full box-shadow values) */
+    --glow-cyan: 0 0 10px rgba(0, 217, 255, 0.5);
+    --glow-cyan-strong: 0 0 20px rgba(0, 217, 255, 0.8);
+    --glow-magenta: 0 0 10px rgba(255, 20, 147, 0.5);
+    --glow-magenta-strong: 0 0 20px rgba(255, 20, 147, 0.8);
+    --glow-orange: 0 0 10px rgba(255, 140, 66, 0.5);
+    
+    /* borders */
+    --border-subtle: #3a3344;
+    --border-accent: var(--accent-cyan);
+    --border-width: 1px;
+    --border-width-thick: 2px;
+    --border-radius: 4px;
+    --border-radius-large: 8px;
+    
+    /* opacity levels */
+    --opacity-disabled: 0.4;
+    --opacity-hover: 0.8;
+    --opacity-overlay: 0.85;
+}
