@@ -1,8 +1,8 @@
 // frontend/src/components/StartModal.jsx
 
 import FindCharacters from './FindCharacters'
-import '../styles/StartModal.css';
-import '../styles/theme.css';
+import '../css/StartModal.css';
+import '../css/theme.css';
 
 function StartModal({ isOpen, onStart, characters, status, foundCharacters }) {
   // don't render anything if modal isn't open
