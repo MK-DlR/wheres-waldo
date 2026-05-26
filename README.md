@@ -15,10 +15,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Where's Waldo</h3>
+<h3 align="center">Object Recognition Protocol</h3>
 
   <p align="center">
-    Full-stack "Where's Waldo" style game web app where users are timed on how quickly they can locate all 3 randomly selected characters.
+    Full-stack sci-fi "Where's Waldo" style game web app where users are timed on how quickly they can locate all 3 randomly selected characters.
     <br />
     <a href="https://github.com/MK-DlR/wheres-waldo"><strong>Explore the docs »</strong></a>
     <br />
@@ -195,7 +195,7 @@ The application validates character selections against stored coordinates in the
 
 ## Roadmap
 
-- [ ] Improve CSS
+- [x] Improve CSS
 - [ ] Public leaderboard
 - [ ] Restart/new game button
 
