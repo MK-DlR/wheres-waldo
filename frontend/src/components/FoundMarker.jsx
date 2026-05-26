@@ -2,19 +2,27 @@
 
 function FoundMarker(props) {
     // position found marker pin on selected spot
-    const foundStyle = {
-        width: '20px',
-        height: '20px',
-        borderRadius: '50% 50% 50% 0',
-        background: '#CA091A',
+    const markerStyle = {
         position: 'absolute',
-        transform: 'rotate(-45deg)',
         top: `${props.position.y}%`,
         left: `${props.position.x}%`,
-        margin: '-10px 0 0 -15px',
-    }
+        transform: 'translate(-50%, -50%)',
 
-    return <div style={foundStyle}></div>
+        width: '14px',
+        height: '14px',
+        borderRadius: '50%',
+
+        background: 'var(--accent-magenta)',
+        boxShadow: '0 0 12px rgba(255, 20, 147, 0.7)',
+
+        pointerEvents: 'none',
+    };
+
+    return (
+        <div className="found-marker" style={markerStyle}>
+            <div className="found-pulse" />
+        </div>
+    );
 }
 
 export default FoundMarker;

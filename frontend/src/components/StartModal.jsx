@@ -11,9 +11,9 @@ function StartModal({ isOpen, onStart, characters, status, foundCharacters }) {
   return (
     <div className="modal-overlay" onClick={onStart}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h1>How to Play</h1>
+        <h1>SIMULATION INITIALIZATION</h1>
         <div className="instructions">
-          <p>Find the characters displayed below as quickly as you can.</p>
+          <p>Find the targets displayed below as quickly as you can.</p>
           <p>The timer will begin as soon as "START" is pressed.</p>
           <br></br>
           <FindCharacters 

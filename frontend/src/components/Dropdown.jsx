@@ -28,7 +28,7 @@ function Dropdown(props) {
 
     return (
         <form style={dropdownStyle} className="dropdown" onClick={event => event.stopPropagation()}>
-            <ul>
+            <ul className="dropdown-list">
                 {filteredCharacters.map((character) => (
                     <li
                     key={character.id}

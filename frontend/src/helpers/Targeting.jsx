@@ -7,12 +7,25 @@ function Targeting(props) {
         top: `${props.position.y}%`,
         left: `${props.position.x}%`,
         transform: 'translate(-50%, -50%)',
-        border: '4px solid red',
-        width: '75px',
-        height: '75px',
-    }
 
-    return <div style={targetingStyle}></div>
+        width: '90px',
+        height: '90px',
+
+        border: '1px solid rgba(0, 217, 255, 0.8)',
+        boxShadow: '0 0 12px rgba(0, 217, 255, 0.6)',
+
+        pointerEvents: 'none',
+    };
+
+    return (
+        <div style={targetingStyle} className="targeting-reticle">
+            <div className="corner tl" />
+            <div className="corner tr" />
+            <div className="corner bl" />
+            <div className="corner br" />
+            <div className="scan-dot" />
+        </div>
+    );
 }
 
 export default Targeting;

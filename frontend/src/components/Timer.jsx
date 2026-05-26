@@ -45,7 +45,7 @@ function Timer({ shouldStop, time,setTime }) {
     }, [shouldStop])
 
     return (
-        <div>
+        <div className="timer">
             <h1>{formatTime(time)}</h1>
         </div>
     );

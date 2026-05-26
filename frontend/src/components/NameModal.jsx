@@ -19,7 +19,7 @@ function NameModal({ isOpen, onClose, onSubmit }) {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h1>Enter Your Name</h1>
+                <h1>IDENTIFICATION REQUIRED</h1>
                 <div className="instructions">
                     <input
                         type="text"
@@ -29,8 +29,10 @@ function NameModal({ isOpen, onClose, onSubmit }) {
                         autoFocus
                     />
                 </div>
-                <button className="submit-button" onClick={handleSubmit}>SAVE</button>
-                <button className="cancel-button" onClick={onClose}>CANCEL</button>
+                <div className="button-group">
+                    <button className="submit-button" onClick={handleSubmit}>SUBMIT</button>
+                    <button className="cancel-button" onClick={onClose}>CANCEL</button>
+                </div>
             </div>
         </div>
     );
