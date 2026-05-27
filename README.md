@@ -237,6 +237,7 @@ Project Link: [Where's Waldo](https://github.com/MK-DlR/wheres-waldo) & [Live De
 - [The Raid](https://www.debutart.com/artist/laurie-greasley/the-raid) by [Laurie Greasley](https://www.debutart.com/artist/laurie-greasley)
 - [Aim Icon](https://www.flaticon.com/free-icon/target_2699685?term=aim&page=1&position=8&origin=tag&related_id=2699685) by [Freepik - Flaticon](https://www.flaticon.com/)
 - [Map Icon](https://icons8.com/icon/44023/location) by [Icons8](https://icons8.com/)
+- [Favicon Converter](https://favicon.io/favicon-converter/)
 - [Othneil Drew's Best README Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
