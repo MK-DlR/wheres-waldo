@@ -67,7 +67,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://wheres-waldo-vert.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,52 +114,42 @@ To get a local copy up and running, follow these steps.
    npm install
    ```
 3. Set up environment variables<br />
-   Backend (`backend/.env`):
+   From the root `wheres-waldo` folder:
    ```sh
-   DATABASE_URL="your_postgres_connection_string"
+   cp backend/.env.example backend/.env
+   cp frontend/.env.example frontend/.env
    ```
-   Frontend (`frontend/.env`):
-   ```sh
-   VITE_API_URL=http://localhost:3000
-   ```
-4. Set up the database (Prisma)<br />
-   From the `backend` folder, run the following commands:<br />
-   4.1. Generate Prisma client
-   ```sh
-   npx prisma generate
-   ```
-   4.2. Create database tables<Br />
+   Open `backend/.env` and fill in your `DATABASE_URL`.
+4. Set up the database<br />
+   From the `backend` folder:
    ```sh
    npx prisma migrate dev --name init
    ```
-5. Seed the database (IMPORTANT)<br />
-   This will create:
-   - All hidden game characters
-   - Stored character coordinates
-   - Character image references
+5. Seed the database<br />
+   Still from the `backend` folder:
    ```sh
    node prisma/seed.js
    ```
-6. Run the application<br />
-   Start backend (from `/backend`):
+   This will create all game characters, their coordinates, and image references.
+6. Start the application<br />
+   Backend (from `/backend`):
    ```sh
    node --watch app.js
    ```
-   Start frontend (from `/frontend`):
+   Frontend (from `/frontend`):
    ```sh
    npm run dev
    ```
-7. Open the app<br />
-   It's recommended to start the backend before starting the frontend, or the database won't be running when the frontend loads.<br />
-   Frontend: `http://localhost:5173`<br />
-   Backend: `http://localhost:3000`
+   Start the backend before the frontend, otherwise API calls on initial load will fail.
+7. Open the app
+   - Frontend: `http://localhost:5173`
+   - Backend: `http://localhost:3000`
 
 ### Notes
 
 - Backend: Express + Prisma + PostgreSQL
 - Frontend: React + Vite
 - Default seed includes all character data and locations
-- CORS is configured for local development
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,7 +177,7 @@ The application validates character selections against stored coordinates in the
 - All character data is automatically created through the seed script
 - Character positions are stored in the PostgreSQL database
 - The backend validates player selections using coordinate comparisons
-- Note: The leaderboard is not currently publically visible, but is functional and can be checked via prisma
+- Note: The leaderboard is not currently publicly visible, but is functional and can be checked via Prisma
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -268,9 +258,11 @@ Project Link: [Where's Waldo](https://github.com/MK-DlR/wheres-waldo) & [Live De
 [Angular-url]: https://angular.io/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-[Express]: https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB
+[EJS]: https://img.shields.io/badge/EJS-B4CA65?style=for-the-badge&logo=ejs&logoColor=fff
+[EJS-url]: https://ejs.co/
+[Express]: https://img.shields.io/badge/Express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
 [Express-url]: https://expressjs.com/en/
-[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000
+[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000
 [Javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
@@ -278,19 +270,19 @@ Project Link: [Where's Waldo](https://github.com/MK-DlR/wheres-waldo) & [Live De
 [Laravel-url]: https://laravel.com
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
-[Node.js]: https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white
+[Node.js]: https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
 [Node-url]: https://nodejs.org/en
-[Postgres]: https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white
+[Postgres]: https://img.shields.io/badge/Postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 [Postgres-url]: https://www.postgresql.org/
-[Prisma]: https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white
+[Prisma]: https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white
 [Prisma-url]: https://www.prisma.io/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[React-router]: https://img.shields.io/badge/React_Router-CA4245?logo=react-router&logoColor=white
+[React-router]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
 [React-router-url]: https://reactrouter.com/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
-[Vite]: https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff
+[Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=fff
 [Vite-url]: https://vite.dev/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
