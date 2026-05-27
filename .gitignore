@@ -1,8 +1,10 @@
 # Dependencies 
 node_modules/
 
-# Environment 
+# Environment variables
 .env
+.env.local
+*.local
 
 # Prisma generated files
 **/generated/prisma/

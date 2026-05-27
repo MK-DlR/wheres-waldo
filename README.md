@@ -198,7 +198,8 @@ The application validates character selections against stored coordinates in the
 - [x] Improve CSS
 - [ ] Public leaderboard
 - [ ] Restart/new game button
-- [ ] Fix delay between selecting character and marker appearing
+- [ ] Bug: Delay between selecting character and marker appearing
+- [ ] Bug: Found character marker appearing over selection dropdown
 
 See the [open issues](https://github.com/MK-DlR/wheres-waldo/issues) for a full list of proposed features (and known issues).
 
