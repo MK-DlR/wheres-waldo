@@ -250,7 +250,7 @@ Project Link: [Where's Waldo](https://github.com/MK-DlR/wheres-waldo) & [Live De
 [license-url]: https://github.com/MK-DlR/wheres-waldo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/adrien-newman
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/screenshot.gif
 
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 
