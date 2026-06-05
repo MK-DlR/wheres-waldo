@@ -215,7 +215,7 @@ As this is a student project created for The Odin Project curriculum, it is curr
 
 Adrien Newman - [@MK_DlR](https://twitter.com/MK_DlR) - adriennewman92@gmail.com
 
-Project Link: [Where's Waldo](https://github.com/MK-DlR/wheres-waldo) & [Live Demo](https://wheres-waldo-vert.vercel.app/)
+Project Link: [Repository](https://github.com/MK-DlR/wheres-waldo) & [Live Demo](https://wheres-waldo-vert.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
