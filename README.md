@@ -67,7 +67,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://wheres-waldo-vert.vercel.app/)
+[![Object Recognition Protocol Screen Shot][product-screenshot]](https://wheres-waldo-vert.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
